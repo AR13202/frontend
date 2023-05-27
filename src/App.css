@@ -1,308 +1,274 @@
+button{
+  cursor: pointer;
+}
 .form, .register {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    height: 100vh;
-    background-color: rgb(24, 15, 66);
-  }
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  background-color: rgb(24, 15, 66);
+  overflow-y: hidden;
+}
+
+.form-img {
+  background-image: url("./component/assets/image2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.form-content, .reg-content {
+  margin: auto;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+.reg-content{
+  overflow-y: hidden;
+}
+.form-content .title {
+  font-size: 64px;
+  color: white;
+  font-weight: bold;
+}
+
+.reg-content .title {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  margin: 10px;
+}
+
+.form-content .full {
+  margin: 10px;
+  width: 50vh;
+  height: 5vh;
+  background-color: white;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.half {
+  margin: 10px;
+  width: 40%vh;
+  height: 5vh;
+  background-color: white;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.reg-content .full {
+  margin: 10px;
+  width: 95%;
+  height: 5vh;
+  background-color: white;
+  padding: 2px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.reg-content .file {
+  margin: 10px;
+  width: 50vh;
+  height: 5vh;
+  padding: 2px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+
+.form-content button, .reg-content button {
   
+  width: 20vh;
+  height: 6vh;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 20px;
+  margin: 10px;
+  font-size: 25px;
+  color: white;
+  background-color: darkblue;
+  font-weight: bold;
+  border: 1px solid white;
+}
+
+.reg-radio {
+  margin: auto;
+  margin-top: 10px;
+}
+
+span {
+  margin: 20px;
+  width: 10vh;
+  height: 20vh;
+  font-size: 20px;
+  color: white;
+}
+
+.add-info {
+  font-size: 15px;
+  color: white;
+  margin: 20px;
+}
+
+.red-reg {
+  color: white;
+}
+
+/* Responsive styles */
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .reg-content{
+    overflow-y: none;
+  }
+  .form, .register {
+    grid-template-columns: 100%;
+  }
+  .register{
+      height: auto;
+  }
   .form-img {
-    background-image: url("./component/assets/image2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    visibility: hidden;
   }
-  
-  .form-content, .reg-content {
-    margin: auto;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+  .form-content{
+      height: 100%;
+      margin: auto;
   }
-  
   .form-content .title {
-    font-size: 64px;
-    color: white;
-    font-weight: bold;
+    font-size: 48px;
   }
   
   .reg-content .title {
-    font-size: 50px;
-    font-weight: bold;
-    color: white;
-    margin: 10px;
+    font-size: 36px;
   }
   
-  .form-content .full {
-    margin: 10px;
-    width: 50vh;
-    height: 5vh;
-    background-color: white;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 20px;
-    text-align: center;
+  .form-content .full, .half, .reg-content .full, .reg-content .file {
+    width: 90%;
   }
-  
-  .half {
-    margin: 10px;
-    width: 40%vh;
-    height: 5vh;
-    background-color: white;
-    padding: 2px;
-    border-radius: 10px;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .reg-content .full {
-    margin: 10px;
-    width: 95%;
-    height: 5vh;
-    background-color: white;
-    padding: 2px;
-    border-radius: 10px;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .reg-content .file {
-    margin: 10px;
-    width: 50vh;
-    height: 5vh;
-    padding: 2px;
-    border-radius: 20px;
-    font-size: 20px;
-    text-align: center;
-    color: white;
-  }
-  
-  .form-content button, .reg-content button {
-    width: 20vh;
-    height: 6vh;
-    font-family: 'Courier New', Courier, monospace;
-    border-radius: 20px;
-    margin: 10px;
-    font-size: 25px;
-    color: white;
-    background-color: darkblue;
-    font-weight: bold;
-    border: 1px solid white;
-  }
-  
-  .reg-radio {
-    margin: auto;
-    margin-top: 10px;
-  }
-  
   span {
-    margin: 20px;
-    width: 10vh;
-    height: 20vh;
-    font-size: 20px;
-    color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
   }
-  
-  .add-info {
-    font-size: 15px;
-    color: white;
-    margin: 20px;
+}
+
+/* Medium screens */
+@media only screen and (min-width: 768px) and ( max-width: 968px) {
+  .register{
+      grid-template-columns: auto;
+      height: auto;
   }
-  
-  .red-reg {
-    color: white;
-  }
-  
-  /* Responsive styles */
-  
-  /* Small screens */
-  @media only screen and (max-width: 600px) {
-    .form, .register {
-      grid-template-columns: 100%;
-    }
-    .register{
-        height: auto;
-    }
-    .form-img {
+  .reg-img {
       visibility: hidden;
-    }
-    .form-content{
-        height: 100%;
-        margin: auto;
-    }
-    .form-content .title {
-      font-size: 48px;
-    }
-    
-    .reg-content .title {
-      font-size: 36px;
-    }
-    
-    .form-content .full, .half, .reg-content .full, .reg-content .file {
-      width: 90%;
-    }
-    
-    span {
-      width: 50px;
-      height: 50px;
-      font-size: 16px;
-    }
   }
-  
-  /* Medium screens */
-  @media only screen and (min-width: 768px) and ( max-width: 968px) {
-    .register{
-        grid-template-columns: auto;
-        height: auto;
-    }
-    .reg-img {
-        visibility: hidden;
-    }
-    .form-content .title {
-    font-size: 42px;
-    }
-    .reg-content .title {
-    font-size: 34px;
-    }
-    .form-content .full, .half, .reg-content .full, .reg-content .file {
-    width: 80%;
-    }
-    .form-content button, .reg-content button {
-    width: 80%;
-    font-size: 20px;
-    }
-    .form-radio, .reg-radio {
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    }
-    span {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-    }
-    .add-info {
-    font-size: 14px;
-    }
+  .form-content .title {
+  font-size: 42px;
   }
-  .sidebar{
-    background-color: rgb(24, 15, 66);
-    height: 100%;
-    font-family: 'Courier New', Courier, monospace;
+  .reg-content .title {
+  font-size: 34px;
   }
-.header-title{
-    display: grid;
-    grid-template-columns: 30% 70%;
-    color: white;
-}
-.title-img{
-    background-image: url(./component/assets/logo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 12vh;
-    height: 10vh;
-}
-.title-tag{
-    display: grid;
-    grid-template-columns: auto;
-    height: 100%;
-}
-.title-tag .ttitle{
-    margin-left: 20px;
-    font-size: 60px;
-    font-weight: bold;
-    height: 4vh;
-}
-.title-tag .stitle{
-    margin-left: 20px;
-    font-size: 13px;
-    margin-top: 25px;
-    height: 3vh;
-}
-.sidebar hr{
+  .form-content .full, .half, .reg-content .full, .reg-content .file {
   width: 80%;
-  height: 2px;
-  background-color: white;
-  border-radius: 50%;
-}
-.cont{
-  height: auto;
-  color: white;
-  margin: auto;
-  margin-top: 30px;
-  display: grid;
-  grid-template-columns: auto;
-}
-.cont div{
-  width: 100%;
-  margin: 10px;
-  width: 100%;
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 40px;
-  
-}
-.header{
-  height: 6vh;
-  background-color: rgb(24, 15, 66);
-  color: white;
-  display: grid;
-  grid-template-columns: 80% 20%;
-  width: 100%;
-}
-.sub-header-title{
-  font-weight: bold;
-  height: 4vh;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 40px;
-  margin-left: 40px;
-}
-.header-bar{
-  margin: auto;
-  justify-content: right;
-  display: grid;
-  grid-template-columns: auto;
-  column-gap: 10px;
-}
-.header-bar button{
-  margin-top: 4px;
-  width: 20vh;
-  height: 4vh;
-  border-radius: 10px;
-  background-color: darkblue;
-  border: 1px solid white;
+  }
+  .form-content button, .reg-content button {
+  width: 80%;
   font-size: 20px;
-  color: white;
+  }
+  .form-radio, .reg-radio {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  }
+  span {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  }
+  .add-info {
+  font-size: 14px;
+  }
+}
+/*update form*/
+
+.update-form{
+  margin: auto;
+  height: 100%;
+  text-align: center;
+}
+.update-half{
+  background-color: lightgray;
+  width: 50vh;
+  height: 5vh;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+.update-file{
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.update-form button{
+  margin: 5px;
+  width: 40vh;
+  height: 8vh;
+  border-radius: 20px;
+  font-size: 30px;
+  padding: 5px;
+  background-color: darkblue;
+}
+/* dashboard main*/
+.main-content{
+  margin-left: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto;
+  height: 90vh;
+}
+.main-title{
+  height: 8vh;
+  width: auto;
+  padding: 20px;
+  font-size: 40px;
   font-weight: bold;
 }
-.dashboard{
-  display: grid;
-  grid-template-columns: 20% 80%;
-  height: 100vh;
+.main-title hr{
+  height: 2px;
+  background-color: darkblue;
+  width: 30%;
+  border-radius: 30%;
 }
 .maincontent{
   display: grid;
   grid-template-columns: 70% 30%;
-  height: 94vh;
+  height: 80vh;
+  width: 100%;
+  overflow-y: hidden;
 }
 .grid{
   display: grid;
   grid-template-columns: auto;
-  height: 94vh;
+  height: 80vh;
 }
 .subgrid-1{
   width: 100%;
-  height: 47vh;
+  height: 40vh;
 }
 .subgrid-2{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   width: 100%;
-  height: 47vh;
+  height: 40vh;
 }
 .profile {
-  height: 80vh;
+  height: 75.5vh;
   width: 80%;
   background-color: darkblue;
   margin: auto;
-  margin-top: 40px;
+  margin-left: 20px;
   border-radius: 20px;
 }
 .p-img {
@@ -312,29 +278,30 @@
 }
 .p-img div{
   margin: auto;
-  margin-top: 30px;
-  width: 20vh;
-  height: 20vh;
-  background-color: aquamarine;
+  margin-top: 2px;
+  width: 30vh;
+  height: 30vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   border-radius: 50%;
 }
 .p-content {
+  padding-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   color: white;
-  height: 50%;
+  height: 40%;
   width: 100%;
 }
 .p-title{
-  font-size: 40px;
+  font-size: 37px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .p-username{
   font-size: 20px;
   color: darkgray;
-}
-.p-email, .p-city{
-  margin-top: 10px;
-  font-size: 20px; 
+  margin-bottom: 20px;
 }
 .p-button{
   width: 100%;
@@ -351,30 +318,452 @@ button{
   font-size: 20px;
   color: white;
 }
-.todayevent, .todaytodos{
-  background-color: green;
-  width: 46vh;
-  margin-left: 20px;
-  height: 35vh;
-  border-radius: 30px;
-  padding: 15px;
-}
-.RecentChat{
-  margin-top: 5vh;
+.RecentChat, .todaytodos{
   background-color: #F9F6EE;
-  width: 96%;
-  margin-left: 23px;
-  height: 38vh;
-  border-radius: 30px;
+  width: 95%;
+  margin-left: auto;
+  height: 35vh;
+  border-radius: 15px;
   border: 1px solid darkblue;
 }
-.RecentChat .title{
+.upcoming-events{
+  margin-top: 20px;
+  overflow-y: hidden;
+}
+.upcomingtodo{
+  margin-left: 10px;
+  overflow-y: hidden;
+}
+
+.upcoming{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: auto;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.todayevent{
+  background-color: #F9F6EE;
+  width: 97.5%;
+  margin-left: auto;
+  height: 94%;
+  border-radius: 15px;
+  border: 1px solid darkblue;
+}
+.RecentChat .title, .todayevent .title, .todaytodos .title{
   color: white;
   background-color: darkblue;
-  width: 95%;
+  width: auto;
   height: 5vh;
   padding: 20px;
   font-weight: bold;
   font-size: 30px;
-  border-radius: 30px 30px 0px 0px;
+  border-radius: 15px 15px 0px 0px;
+}
+/* dashboard */
+.dashboard{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+  display:flex;
+  width: auto;
+}
+main{
+  width: 100%;
+  margin: auto;
+  background-color: red;
+}
+.sidebar{
+  background: rgb(24, 15, 66);
+  color: #fff;
+  height: 100vh;
+  width: 200px;
+  transition: all 0.7s;
+}
+.top_section{
+  display: flex;
+  align-items:center;
+  padding:20px 20px 11px 13px;
+}
+.logo{
+  background-image: url('./component/assets/logo__1_-removebg-preview.png');
+  background-size: cover;
+  width: 100px;
+  height: 80px;
+}
+.comicon{
+  background-image: url('./component/assets/logo-removebg.png');
+  background-size: cover;
+  width: 45px;
+  height: 40px;
+}
+.bars{
+  display: flex;
+  font-size: 25px;
+  margin-left: 20px;
+}
+.link{
+  display: flex;
+  color: #fff;
+  padding: 20px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+.blink{
+  margin: auto;
+}
+.link:hover{
+  background:lightskyblue;
+  color: #000;
+  transition: all 0.2s;
+}
+
+.icon, .link_text{
+  font-size: 20px;
+}
+
+/*todos*/
+.todo-add{
+  height: 15vh;
+}
+.todo-add input{
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 50vh;
+  height: 2vh;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  font-size: 15px;
+}
+.todo-add button{
+  margin-left: 10px;
+  margin-top: 2px;
+  padding: 7px;
+  width: 20vh;
+  height: 7vh;
+  background-color: darkblue;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.todos{
+  height: 60vh;
+  margin-left: 20px;
+  overflow-y: auto;
+  margin-right: 20px;
+}
+.todos::-webkit-scrollbar, .events::-webkit-scrollbar {
+  display: none;
+}
+.todo{
+  width: 90%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  margin: 20px;
+  background-color: rgb(5, 5, 108);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.todo div{
+  font-size: 25px;
+  color: white;
+  width: 100%;
+  height: auto;
+}
+.todo button{
+  width: 80%;
+  height: 5vh;
+  padding: 5px;
+  margin: auto;
+  background-color: red;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  font-size: 20px;
+}
+.add-event{
+  padding-top: 30px;
+  margin-left: 20px;
+  height: auto;
+}
+.add-event-title{
+  width: 40vh;
+  height: 3vh;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.add-event-date{
+  margin-left: 20px;
+  width: 20vh;
+  height: 3vh;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.add-event .add-event-desc{
+  margin-top: 15px;
+  width: 80vh;
+  height: 3vh;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.add-event hr, .todo-add hr{
+  margin-top: 20px;
+  background-color: lightgray;
+  height: 1px;
+  width: 90%;
+}
+.todo-add hr{
+  margin-left: 30px;
+}
+.add-event button{
+  margin-left: 10px;
+  margin-top: 2px;
+  padding: 7px;
+  width: 20vh;
+  height: 7vh;
+  background-color: darkblue;
+  border-radius: 20px;
+  font-size: 20px;
+}
+.events{
+  height: 50vh;
+  margin-left: 20px;
+  overflow-y: auto;
+}
+.event{
+  padding: 20px;
+  width: 90%;
+  height: auto;
+  border-radius: 20px;
+  background-color: rgb(5, 5, 108);
+  color: white;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+.event-header{
+  display: grid;
+  grid-template-columns: 85% 15%;
+  margin-bottom: 5px;
+}
+.event-header button{
+  margin: auto;
+  width: 80%;
+  height: 5vh;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border:  none;
+}
+.event-title{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+.event-date{
+  color: rgb(149, 148, 165);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.upcoming .data{
+  color: #000;
+  font-size: 20px;
+  height: auto;
+  font-weight: bold;
+}
+.list-item{
+  color: black;
+  font-size: 20px;
+  height: auto;
+}
+.blink{
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 17% 83%;
+  margin-bottom: 15px;
+  height: 20px;
+  font-size: 17px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text{
+  text-align: left;
+}
+.RecentChat-data{
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+}
+.data2{
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 20px;
+  width: auto;
+}
+.video-btn{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url('./component/assets/image1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(70%);
+  filter: blur(100%);
+}
+.video-btn button{
+  margin:auto;
+  height: 10vh; 
+  width: 40vh; 
+  background-color: darkblue;
+  padding: 10px; 
+  font-size: 25px;
+}
+@media only screen and (max-width: 800px){
+  .main-content{
+    height: 100%;
+  }
+  .maincontent{
+    grid-template-columns: auto;
+    overflow-y: auto;
+
+  }
+  .grid{
+    margin: auto;
+    width: 100%;
+    height: 120vh;
+  }
+  .main-content::-webkit-scrollbar{
+    display: none;
+  }
+  .main-title{
+    font-size: 30px;
+  }
+  .subgrid-1{
+    width: 90%;
+  }
+  .subgrid-2{
+    grid-template-columns: auto;
+    height: 80vh;
+    width: 90%;
+  }
+  .RecentChat, .todayevent, .todaytodos{
+    margin-left: 10px;
+    width: 100%;
+  }
+  .RecentChat .title, .todayevent .title, .todaytodos .title{
+    font-size: 20px;
+  }
+  .upcoming .data{
+    font-size: 15px;
+  }
+  .upcoming .date{
+    font-size: 13px;
+  }
+  .list-item{
+    font-size: 15px;
+    font-weight: normal;
+  }
+  .profile{
+    height: 90vh;
+  }
+  .p-title{
+    font-size: 27px;
+  }
+  .blink{
+    margin-left: 5px;
+    font-size: 15px;
+  }
+  .todo-add{
+    height: auto;
+  }
+  .todo-add input{
+    width: 30vh;
+    height: 1vh;
+  }
+  .todo-add button{
+    margin-top: 10px;
+    margin-left: 25px;
+  }
+  .todo-add hr, .add-event hr{
+    width: 80%;
+  }
+  .todos{
+    height: 58vh;
+  }
+  .todo{
+    grid-template-columns: auto;
+    height: auto;
+    width: auto;
+    text-align: center;
+  }
+  .todo div{
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  .todo button{
+    font-size: 15px;
+    width: 40%;
+    height: 4vh;
+    padding: 1px;
+  }
+  .add-event{
+    padding-top: 0px;
+    height: auto;
+  }
+  .add-event-title{
+    display: block;
+    margin-top: 20px;
+    width: 30vh;
+    font-size: 15px;
+  }
+  .add-event-date{
+    margin-left: 0px;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  .add-event .add-event-desc{
+    width: auto;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .add-event button{
+    margin-left: 0px;
+  }
+  .events{
+    height: 40vh;
+    margin-left: 0px;
+  }
+  .event{
+    width: 80%;
+    text-align: center;
+  }
+  .event-header{
+    grid-template-columns: auto;
+    margin-bottom: 10px;
+  }
+  .event-title{
+    text-align: center;
+    font-size: 20px;
+  }
+  .event-header button{
+    width: 40%;
+    font-size: 20px;
+    height: 4vh;
+    padding: 1px;
+  }
+  .data2{
+    font-size: 15px;
+    margin-left: 5px;
+  }
 }

@@ -1,25 +1,63 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { FaTh, FaVideo, FaBars, FaClipboardList, FaCalendarAlt, FaSignOutAlt }from "react-icons/fa";
+import { NavLink, useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-const SideBar = () => {
-  return (
-    <div className='sidebar'>
-        <div className='header-title'>
-            <div className='title-img'></div>
-            <div className='title-tag'>
-                <div className='ttitle'>Wave</div>
-                <div className='stitle'>A Video Calling App</div>
+const Sidebar = ({children}) => {
+    const[isOpen ,setIsOpen] = useState(false);
+    const navigate = useNavigate();
+    const handleUserInfo = () => {
+        Cookies.remove('token');
+        navigate('/');
+    }
+    const toggle = () => setIsOpen (!isOpen);
+    const menuItem=[
+        {
+            path:"/dashboard",
+            name:"Dashboard",
+            icon:<FaTh/>
+        },
+        {
+            path:"/dashboard/video",
+            name:"Video Call",
+            icon:<FaVideo/>
+        },
+        {
+            path:"/dashboard/todo",
+            name:"Todos",
+            icon:<FaClipboardList/>
+        },
+        {
+            path:"/dashboard/events",
+            name:"Events",
+            icon:<FaCalendarAlt/>
+        },
+    ]
+    return (
+        <div className="container">
+            <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
+                <div className="top_section">
+                    <div style={{display: isOpen ? "block" : "none"}} className="logo"></div>
+                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
+                        <FaBars onClick={toggle}/>
+                    </div>
+                </div>
+                {
+                    menuItem.map((item, index)=>(
+                        <NavLink to={item.path} key={index} className="link" activeclassname="active" style={{textDecoration:'none'}}>
+                            <div className="icon">{item.icon}</div>
+                            <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                        </NavLink>
+                    ))
+                }
+                <NavLink to='/' className="link" activeclassname="active" style={{textDecoration:'none'}} onClick={handleUserInfo}>
+                    <div className="icon"><FaSignOutAlt/></div>
+                    <div style={{display: isOpen ? "block" : "none"}} className="link_text">logout</div>
+                </NavLink>
             </div>
+            <main>{children}</main>
         </div>
-        <hr/>
-        <div className='cont'>
-            <Link to={'/dashboard'} style={{color: 'inherit', textDecoration: 'none'}}><div>Home</div></Link>
-            <Link to={'/dashboard/video'} style={{color: 'inherit', textDecoration: 'none'}}><div>Video Call</div></Link>
-            <Link to={'/dashboard/todos'} style={{color: 'inherit', textDecoration: 'none'}}><div>Todos</div></Link>
-            <Link to={'/dashboard/events'} style={{color: 'inherit', textDecoration: 'none'}}><div>Events</div></Link>
-        </div>
-    </div>
-  )
-}
+    );
+};
 
-export default SideBar
+export default Sidebar;

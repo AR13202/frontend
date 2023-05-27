@@ -10,22 +10,47 @@ const Register = () => {
         password_hash: "",
         date_of_birth: "",
         gender: "",
+        imageFile: "",
         city: "",
         mobile: ""
     });
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        setUser((prev) => ({ ...prev, [name]: value }));
+        const { name, value, files } = e.target;
+        if (name === 'imageFile') {
+            setUser((prev) => ({ ...prev, [name]: files[0] }));
+        } else {
+            setUser((prev) => ({ ...prev, [name]: value }));
+        }
     };
     const navigate = useNavigate();
     const handleClick = async (e) => {
         e.preventDefault();
-        try{
-            const response = await axios.post("http://localhost:8080/register", user);
+        const emptyFields = Object.entries(user).filter(([key, value]) => value === "");
+        if (emptyFields.length > 0) {
+            const fieldNames = emptyFields.map(([key, value]) => key).join(', ');
+            alert(`Please fill the following fields: ${fieldNames}`);
+            return;
+        }
+        if (user.mobile.toString().length !== 10) {
+            alert("Please enter a valid mobile number of 10 digits");
+            return;
+        }
+        if (user.password_hash.toString().length < 4) {
+            alert("password length should be greater than 4");
+            return;
+        }
+        if (user.username.toString().length < 4) {
+            alert("username length should be greater than 4");
+            return;
+        }
+        try {
+            const response = await axios.post("http://localhost:8080/register", user, {
+                headers: { "Content-Type": "multipart/form-data" },
+            });
             console.log(response.data);
             alert("user added");
             navigate('/');
-        }catch(err){
+        } catch (err) {
             if (err.response && err.response.status === 409) {
                 alert("Username already registered");
             } else {
@@ -33,7 +58,7 @@ const Register = () => {
             }
         }
         console.log(user);
-    };
+    };    
     const today = new Date().toISOString().split("T")[0];
     return (
         <div className='register'>
@@ -58,6 +83,7 @@ const Register = () => {
                     </span>
                 </div><br/>
                 <input type='text' placeholder='city' name='city' onChange={handleChange} className='full'/><br/>
+                <input type='file' placeholder='imageFile' name='imageFile' onChange={handleChange} className='file' /><br/>
                 <input type='number' placeholder='mobile' name='mobile' onChange={handleChange} className='full'/><br/>
                 <button onClick={handleClick}>Register</button>
                 <div className='red-reg' style={{margin: '10px'}}>
